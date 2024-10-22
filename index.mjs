@@ -18,13 +18,12 @@ app.use(bodyParser.json());
 
 // Configuración de la conexión a la base de datos
 const conexion = mysql.createConnection({
-    host: "DB_HOST",
-    database: "DB_NAME",
-    user: "DB_USER",
-    password: "DB_PASSWORD",
-    port: "DB_PORT"
+    host: DB_HOST,       // Sin comillas
+    database: DB_NAME,   // Sin comillas
+    user: DB_USER,       // Sin comillas
+    password: DB_PASSWORD, // Sin comillas
+    port: DB_PORT        // Sin comillas
 });
-
 conexion.connect(function(err) {
     if (err) {
         console.error('Error connecting to the database:', err);
