@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mysql from 'mysql';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import productosRoutes from './routes/productos.mjs';
@@ -11,13 +10,13 @@ import configRoutes from './routes/config.mjs';
 import ventasRoutes from './routes/ventas.mjs';
 import detalleRoutes from './routes/detalle.mjs';
 import facturacionesRoutes from './routes/facturaciones.mjs';
-import {PORT, DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER} from './config.js';
+import {PORT, DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER} from './config.js';
 import mysql from 'mysql2';
 
 const app = express();
 app.use(bodyParser.json());
 
-// Configuración de la conexión a la base de datos
+// Configuración de la conexión a la base de datos usando mysql2
 const conexion = mysql.createConnection({
     host: DB_HOST,
     database: DB_NAME,

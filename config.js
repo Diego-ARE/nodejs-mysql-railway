@@ -5,3 +5,6 @@ export const DB_USER = process.env.DB_USER || 'root'
 export const DB_PASSWORD = process.env.DB_PASSWORD || ''
 export const DB_NAME = process.env.DB_NAME || 'bd_analisis'
 export const DB_PORT = process.env.DB_PORT || ''
+
+//mysql://root:CWJZhkGvvNxrqSJfZsWJSspNzCvcjldx@junction.proxy.rlwy.net:35867/railway
+//bd_analisis
