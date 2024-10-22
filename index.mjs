@@ -12,18 +12,20 @@ import ventasRoutes from './routes/ventas.mjs';
 import detalleRoutes from './routes/detalle.mjs';
 import facturacionesRoutes from './routes/facturaciones.mjs';
 import {PORT, DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER} from './config.js';
+import mysql from 'mysql2';
 
 const app = express();
 app.use(bodyParser.json());
 
 // Configuración de la conexión a la base de datos
 const conexion = mysql.createConnection({
-    host: DB_HOST,       // Sin comillas
-    database: DB_NAME,   // Sin comillas
-    user: DB_USER,       // Sin comillas
-    password: DB_PASSWORD, // Sin comillas
-    port: DB_PORT        // Sin comillas
+    host: DB_HOST,
+    database: DB_NAME,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    port: DB_PORT
 });
+
 conexion.connect(function(err) {
     if (err) {
         console.error('Error connecting to the database:', err);
